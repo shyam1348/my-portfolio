@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Add Project</title>
+    <style>
+        body { background: #0f172a; color: white; font-family: sans-serif; display: flex; justify-content: center; padding: 50px; }
+        form { background: #1e293b; padding: 30px; border-radius: 10px; width: 400px; }
+        input, textarea { width: 100%; margin-bottom: 15px; padding: 10px; border-radius: 5px; border: 1px solid #334155; background: #0f172a; color: white; }
+        button { background: #38bdf8; color: #0f172a; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <form action="/admin/add" method="POST">
+        <h2>Add New Project</h2>
+        <input type="text" name="title" placeholder="Project Title" required>
+        <textarea name="description" placeholder="Project Description" required></textarea>
+        <input type="text" name="techStack" placeholder="Tech (comma separated: HTML, CSS, Node)" required>
+        <input type="text" name="link" placeholder="Project URL">
+        <button type="submit">Save Project</button>
+    </form>
+</body>
+</html>
