@@ -20,9 +20,13 @@ const projectSchema = new mongoose.Schema({
 const Project = mongoose.model('Project', projectSchema);
 
 // 3. Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/portfolioDB')
-    .then(() => console.log("Connected to MongoDB!"))
-    .catch(err => console.log("Mongo Error:", err));
+// Change this:
+// mongoose.connect('mongodb://127.0.0.1:27017/portfolioDB')
+
+// To this (Use your real Atlas string here):
+mongoose.connect('mongodb+srv://shyam:yourpassword@cluster0.mongodb.net/portfolioDB?retryWrites=true&w=majority')
+    .then(() => console.log("Connected to Cloud MongoDB!"))
+    .catch(err => console.log(err));
 
 // 4. THE FIX: The Route
 app.get('/', async (req, res) => {
